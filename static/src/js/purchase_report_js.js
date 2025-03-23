@@ -107,14 +107,8 @@ class PurchaseReport extends Component {
            'report_type': 'qweb-pdf',
            'report_name': 'dynamic_purchase_report.purchase_order_report_template',
            'report_file': 'dynamic_purchase_report.purchase_order_report_template',
-           'data': {
-               'report_data': this.state.data.order_line
-           },
-           'context': {
-                  'active_model': 'purchase.report',
-                  'landscape': 1,
-                  'purchase_order_report': true
-               },
+           'data': this.state.data.order_line,
+           'context': {'active_model': 'purchase.report', 'landscape': 1},
          'display_name': 'Purchase Order',
        });
    }

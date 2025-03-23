@@ -2,18 +2,18 @@
 <odoo>
 
     <record id="action_report_purchase_order" model="ir.actions.report">
-        <field name="name">Purchase Order Report</field>
+        <field name="name">Purchase PDF Report</field>
         <field name="model">purchase.report</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">dynamic_purchase_report.purchase_order_report_template</field>
         <field name="report_file">dynamic_purchase_report.purchase_order_report_template</field>
-        <field name="print_report_name">'Purchase Order '</field>
+        <field name="print_report_name">'Purchase PDF Order'</field>
     </record>
 
     <template id="purchase_order_report_template">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doc">
-                <main>
+            <t t-foreach="report_data" t-as="doc">
+                <t t-call="web.external_layout">
                     <div class="page">
                         <h2>Purchase Order Report</h2>
                         <table class="table table-bordered">
@@ -35,7 +35,7 @@
                             </tbody>
                         </table>
                     </div>
-                </main>
+                </t>
             </t>
         </t>
     </template>

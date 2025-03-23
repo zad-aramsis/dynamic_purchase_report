@@ -108,7 +108,7 @@ class PurchaseReport extends Component {
            'report_name': 'dynamic_purchase_report.purchase_order_report_template',
            'report_file': 'dynamic_purchase_report.purchase_order_report_template',
            'data': {
-               'report_data': this.state.data
+               'report_data': this.state.data.order_line
            },
            'context': {
                   'active_model': 'purchase.report',

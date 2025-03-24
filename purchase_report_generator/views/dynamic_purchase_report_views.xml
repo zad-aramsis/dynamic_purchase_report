@@ -11,4 +11,5 @@
               name=" Dynamic Purchase Report"
               parent="purchase.purchase_report"
               action="dynamic_purchase_report_action"/>
+
 </odoo>
